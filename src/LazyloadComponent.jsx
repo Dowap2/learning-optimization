@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
 
@@ -12,9 +12,11 @@ const ImageBox = styled.img`
 
 export function LazyloadComponent(props) {
   const [url, setUrl] = useState();
-  axios.get("https://source.unsplash.com/random").then(function(res) {
-    console.log(res.config.url);
-    setUrl(res.config.url);
+  useEffect(() => {
+    axios.get("https://source.unsplash.com/random").then(function(res) {
+      console.log(res.config.url);
+      setUrl(res.config.url);
+    });
   });
   return (
     <div>
