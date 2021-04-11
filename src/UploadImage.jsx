@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import ColorThief from "color-thief-react";
+import Color from "color-thief-react";
 
 const ImageBox = styled.img`
   width: 500px;
@@ -23,22 +23,21 @@ export function UploadImage(props) {
       reader.readAsDataURL(event.files[0]);
     }
   };
-  const colorThief = url => {
-    ColorThief.getPalette(url)
-      .then(color => console.log(color))
-      .catch(error => console.log(error));
-  };
+
   return (
     <div>
       <div>
         <ImageBox src={url} alt="img" className="imgBox" />
       </div>
       <input type="file" accept="img/*" onChange={e => changeFile(e.target)} />
-      <button
-        onClick={e => colorThief(document.getElementsByClassName("imgBox"))}
-      >
-        색상추출
-      </button>
+      <Color src={url}>
+        {({ data, loading, error }) => (
+          <div>
+            <div style={{ color: data }}>Text with the predominant color</div>
+            <button onClick={e => console.log(data, loading, error)}></button>
+          </div>
+        )}
+      </Color>
     </div>
   );
 }
