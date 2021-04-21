@@ -4,7 +4,7 @@ import propTypes from "prop-types";
 function Q3() {
   const [count, setCount] = useState(0);
 
-  const plusOne = useMemo(() => setCount(count + 1));
+  const plusOne = useMemo(() => setCount(count + 1), [count]);
 
   return (
     <div>
