@@ -1,15 +1,15 @@
-import "./App.css";
-// import { LazyloadComponent } from "./LazyloadComponent";
-import { UploadImage } from "./UploadImage";
+// import "./App.css";
+// // import { LazyloadComponent } from "./LazyloadComponent";
+// import { UploadImage } from "./UploadImage";
 
-function App() {
-  return (
-    <div className="App">
-      {/* <LazyloadComponent /> */}
+// function App() {
+//   return (
+//     <div className="App">
+//       {/* <LazyloadComponent /> */}
 
-      <UploadImage />
-    </div>
-  );
-}
+//       <UploadImage />
+//     </div>
+//   );
+// }
 
-export default App;
+// export default App;
