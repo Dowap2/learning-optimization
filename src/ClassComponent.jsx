@@ -7,10 +7,13 @@ export class ClassComponent extends React.Component {
   }
   componentDidMount() {
     console.log("componentDidMount");
-    this.timerID = setInterval(() => this.tick(), 1000);
+    this.clock = setInterval(() => this.tick(), 1000);
   }
   componentDidUpdate() {
     console.log("componentDidUpdate");
+  }
+  componentDidCatch(error, info) {
+    console.log("error :", error, info);
   }
   tick() {
     this.setState({
@@ -20,7 +23,7 @@ export class ClassComponent extends React.Component {
   render() {
     return (
       <h1>
-        <h2>It is {new Date().toLocaleTimeString()}.</h2>
+        <h2>{new Date().toLocaleTimeString()}</h2>
         <button onClick={e => console.log(this.state.color)}></button>
       </h1>
     );
