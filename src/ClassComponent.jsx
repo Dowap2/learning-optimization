@@ -7,10 +7,15 @@ export class ClassComponent extends React.Component {
   }
   componentDidMount() {
     console.log("componentDidMount");
-    this.setState({ date: new Date(), color: "red" });
+    this.timerID = setInterval(() => this.tick(), 1000);
   }
   componentDidUpdate() {
     console.log("componentDidUpdate");
+  }
+  tick() {
+    this.setState({
+      date: new Date()
+    });
   }
   render() {
     return (
