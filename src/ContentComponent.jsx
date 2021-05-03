@@ -5,7 +5,7 @@ const ContentBox = styled.div`
   width: 100px;
   height: 500px;
 `;
-const imgBox = styled.img`
+const ImgBox = styled.img`
   width: 100px;
   height: 100px;
 `;
@@ -14,7 +14,7 @@ export function ContentComponent(props) {
   return (
     <ContentBox>
       {props.value}
-      <imgBox src={props.img} alt="img" />
+      <ImgBox src={props.img} alt="img" />
       <button onClick={e => console.log(props.value)}></button>
     </ContentBox>
   );
