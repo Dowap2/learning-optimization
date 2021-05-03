@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
-import sliderState from "./sliderState";
+import slideState from "./slideState";
 
 export default combineReducers({
-  sliderState
+  slideState
 });

@@ -1,9 +1,9 @@
-import "./App.css";
 // import { LazyloadComponent } from "./LazyloadComponent";
 // import { UploadImage } from "./UploadImage";
 import { TodoList } from "./TodoList";
 // import { ClockComponent } from "./ClockComponent";
 import { ClassComponent } from "./ClassComponent";
+import { Slider } from "./Slider";
 
 function App() {
   return (
@@ -14,6 +14,7 @@ function App() {
       <button onClick={e => console.log(new Date())}></button> */}
       <ClassComponent />
       {/* <UploadImage /> */}
+      <Slider />
     </div>
   );
 }

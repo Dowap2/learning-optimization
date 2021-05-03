@@ -11,6 +11,7 @@ const initalState = {
 export default function reducer(state = initalState, action) {
   switch (action.type) {
     case SLIDESTATE: {
+      console.log("slider");
       return { slideState: action.payload };
     }
     default: {
