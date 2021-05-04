@@ -5,7 +5,7 @@ const SLIDESTATE = "SLIDESTATE";
 export const ChangeSlideState = createAction(SLIDESTATE);
 
 const initalState = {
-  slideState: 1
+  slideState: 600
 };
 
 export default function reducer(state = initalState, action) {

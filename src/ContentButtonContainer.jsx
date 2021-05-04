@@ -2,15 +2,13 @@ import React from "react";
 import { ContentButtonComponent } from "./ContentButtonComponent";
 import { connect } from "react-redux";
 import * as slideActions from "./store/modules/slideState";
-import { useSelector } from "react-redux";
 
 export function ContentButtonContainer(props) {
-  const index = useSelector(state => state.slideState.slideState);
   return (
     <div>
       <ContentButtonComponent
-        prevFunc={props.prevFunc(index - 1)}
-        nextFunc={props.nextFunc(index + 1)}
+        prevFunc={props.prevFunc}
+        nextFunc={props.nextFunc}
       />
     </div>
   );
