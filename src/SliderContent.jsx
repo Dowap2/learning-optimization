@@ -7,8 +7,7 @@ export function SliderContent() {
   const index = useSelector(state => state.slideState.slideState);
   const [url, setUrl] = useState("");
   const changeImg = useEffect(() => {
-    const contentKey = index < 0 ? (index * -1) % 6 : index % 6;
-    switch (contentKey) {
+    switch (index % 6) {
       case 0:
         setUrl("https://pbs.twimg.com/media/ExUElF7VcAMx7jx.jpg");
         break;
