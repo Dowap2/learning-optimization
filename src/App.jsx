@@ -4,18 +4,27 @@ import { TodoList } from "./TodoList";
 // import { ClockComponent } from "./ClockComponent";
 import { ClassComponent } from "./ClassComponent";
 import { Slider } from "./Slider";
+import { AppHeader } from "./AppHeader";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
+    <Router className="App">
       {/* <LazyloadComponent /> */}
-      <TodoList />
+      <AppHeader />
+      <Route path="/todo">
+        <TodoList />
+      </Route>
       {/* <ClockComponent date={new Date()} />
       <button onClick={e => console.log(new Date())}></button> */}
-      <ClassComponent />
+      <Route path="/class">
+        <ClassComponent />
+      </Route>
       {/* <UploadImage /> */}
-      <Slider />
-    </div>
+      <Route path="/slider">
+        <Slider />
+      </Route>
+    </Router>
   );
 }
 
