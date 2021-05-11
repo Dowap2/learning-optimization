@@ -10,7 +10,7 @@ import { UserInfo } from "./UserInfo";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {
-  const [id, setId] = useState(1);
+  const [id, setId] = useState("");
   return (
     <Router className="App">
       {/* <LazyloadComponent /> */}

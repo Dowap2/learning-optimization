@@ -3,7 +3,7 @@ import React from "react";
 export class ClassComponent extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { date: new Date(), color: "black" };
+    this.state = { date: new Date() };
   }
   componentDidMount() {
     console.log("componentDidMount");
@@ -24,7 +24,6 @@ export class ClassComponent extends React.Component {
     return (
       <h1>
         <h2>{new Date().toLocaleTimeString()}</h2>
-        <button onClick={e => console.log(this.state.color)}></button>
       </h1>
     );
   }
