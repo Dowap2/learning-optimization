@@ -1,5 +1,5 @@
 import React from "react";
-import { Filter } from "./Filter";
+import { FilterContainer } from "./FilterContainer";
 import { Search } from "./Search";
 import { Item } from "./Item";
 import { View } from "./View";
@@ -7,7 +7,7 @@ import { View } from "./View";
 export function Dictionary() {
   return (
     <div>
-      <Filter />
+      <FilterContainer />
       <Search />
       <Item />
       <View />
