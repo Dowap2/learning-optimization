@@ -14,12 +14,9 @@ const Tag = styled.div`
 export function Search(props) {
   const value = useSelector(state => state.dictionaryState.filterState);
   const [htmlTag, setHtmlTag] = useState([]);
-  const clickFunc = text => {
-    const SearchArray = value;
-    const isInArray = element => element === text;
-    const index = SearchArray.findIndex(isInArray);
-    SearchArray.splice(index, 1);
-    props.onChange(SearchArray);
+  const clickFunc = index => {
+    value.splice(index, 1);
+    props.onChange(value);
   };
   useEffect(() => {
     setHtmlTag([]);
@@ -28,7 +25,7 @@ export function Search(props) {
         htmlTag.concat([
           <Tag>
             {value[i]}
-            <button onClick={e => clickFunc(value[i])}>x</button>
+            <button onClick={e => clickFunc(i)}>x</button>
           </Tag>
         ])
       );
