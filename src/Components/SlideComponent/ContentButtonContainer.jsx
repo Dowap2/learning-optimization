@@ -1,7 +1,7 @@
 import React from "react";
 import { ContentButtonComponent } from "./ContentButtonComponent";
 import { connect } from "react-redux";
-import * as slideActions from "./store/modules/slideState";
+import * as slideActions from "../../store/modules/slideState";
 
 export function ContentButtonContainer(props) {
   return (

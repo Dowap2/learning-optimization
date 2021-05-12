@@ -1,30 +1,29 @@
-// import { LazyloadComponent } from "./LazyloadComponent";
-// import { UploadImage } from "./UploadImage";
+import { LazyloadComponent } from "./Components/ImgComponent/LazyloadComponent";
+import { UploadImage } from "./Components/ImgComponent/UploadImage";
 import React, { useState } from "react";
-import { TodoList } from "./TodoList";
-// import { ClockComponent } from "./ClockComponent";
-import { ClassComponent } from "./ClassComponent";
-import { Slider } from "./Slider";
+import { TodoList } from "./Components/TodoListComponent/TodoList";
+import { ClockComponent } from "./Components/ClockComponent/ClockComponent";
+import { Slider } from "./Components/SlideComponent/Slider";
 import { AppHeader } from "./AppHeader";
-import { UserInfo } from "./UserInfo";
-import { Dictionary } from "./Dictionary";
+import { UserInfo } from "./Components/UserComponent/UserInfo";
+import { Dictionary } from "./Components/DictionaryComponent/Dictionary";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {
   const [id, setId] = useState("");
   return (
     <Router className="App">
-      {/* <LazyloadComponent /> */}
       <AppHeader id={id} setId={setId} />
+      <Route path="/img">
+        <LazyloadComponent />
+        <UploadImage />
+      </Route>
       <Route path="/todo">
         <TodoList />
       </Route>
-      {/* <ClockComponent date={new Date()} />
-      <button onClick={e => console.log(new Date())}></button> */}
       <Route path="/class">
-        <ClassComponent />
+        <ClockComponent />
       </Route>
-      {/* <UploadImage /> */}
       <Route path="/slider">
         <Slider />
       </Route>

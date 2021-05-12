@@ -30,17 +30,22 @@ export function AppHeader(props) {
           Slider
         </Link>
       </LinkComponent>
-      <LinkComponent>
+      {/* <LinkComponent>
         <input
           type="text"
           value={props.id}
           onChange={e => props.setId(e.target.value)}
         />
-        <Link to={`/${props.id}`}>확인</Link>
-      </LinkComponent>
+        <Link to={`/${props.id}`}>ok</Link>
+      </LinkComponent> */}
       <LinkComponent>
         <Link to="/dictionary" style={linkStyle}>
           dictionary
+        </Link>
+      </LinkComponent>
+      <LinkComponent>
+        <Link to="/img" style={linkStyle}>
+          img
         </Link>
       </LinkComponent>
     </AppHeaderComponent>

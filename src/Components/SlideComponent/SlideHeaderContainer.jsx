@@ -1,7 +1,7 @@
 import React from "react";
 import { SlideHeader } from "./SlideHeader";
 import { connect } from "react-redux";
-import * as slideActions from "./store/modules/slideState";
+import * as slideActions from "../../store/modules/slideState";
 
 export function SlideHeaderContainer(props) {
   return (

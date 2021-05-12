@@ -1,6 +1,6 @@
 import React from "react";
 
-export class ClassComponent extends React.Component {
+export class ClockComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = { date: new Date() };
