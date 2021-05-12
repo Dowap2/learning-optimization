@@ -38,6 +38,11 @@ export function AppHeader(props) {
         />
         <Link to={`/${props.id}`}>확인</Link>
       </LinkComponent>
+      <LinkComponent>
+        <Link to="/dictionary" style={linkStyle}>
+          dictionary
+        </Link>
+      </LinkComponent>
     </AppHeaderComponent>
   );
 }

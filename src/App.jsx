@@ -7,6 +7,7 @@ import { ClassComponent } from "./ClassComponent";
 import { Slider } from "./Slider";
 import { AppHeader } from "./AppHeader";
 import { UserInfo } from "./UserInfo";
+import { Dictionary } from "./Dictionary";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {
@@ -29,6 +30,9 @@ function App() {
       </Route>
       <Route path={`/${id}`}>
         <UserInfo info={id} />
+      </Route>
+      <Route path="/dictionary">
+        <Dictionary />
       </Route>
     </Router>
   );
