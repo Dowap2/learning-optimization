@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
 import slideState from "./slideState";
-import dictionaryState from "./dictionaryState";
+import filterState from "./filterState";
 
 export default combineReducers({
   slideState,
-  dictionaryState
+  filterState
 });

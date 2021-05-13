@@ -23,3 +23,4 @@ SlideHeaderContainer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(SlideHeaderContainer);
+

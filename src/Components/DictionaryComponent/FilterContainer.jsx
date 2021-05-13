@@ -1,10 +1,18 @@
 import React from "react";
 import { Filter } from "./Filter";
 import { connect } from "react-redux";
-import * as filterActions from "../../store/modules/dictionaryState";
+import * as filterActions from "../../store/modules/filterState";
 
 export function FilterContainer(props) {
-  return <Filter onChange={props.filter} />;
+  return (
+    <Filter
+      onChangeAD={props.AD}
+      onChangeAP={props.AP}
+      onChangeHP={props.HP}
+      onChangeMANA={props.MANA}
+      onChangeCSC={props.CSC}
+    />
+  );
 }
 
 const mapStateToProps = state => {
@@ -12,7 +20,11 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  filter: state => dispatch(filterActions.ChangeFilterState(state))
+  AD: state => dispatch(filterActions.ChangeAD(state)),
+  AP: state => dispatch(filterActions.ChangeAP(state)),
+  HP: state => dispatch(filterActions.ChangeHP(state)),
+  MANA: state => dispatch(filterActions.ChangeMANA(state)),
+  CSC: state => dispatch(filterActions.ChangeCSC(state))
 });
 
 FilterContainer = connect(mapStateToProps, mapDispatchToProps)(FilterContainer);

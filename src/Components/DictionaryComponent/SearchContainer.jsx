@@ -1,10 +1,10 @@
 import React from "react";
 import { Search } from "./Search";
 import { connect } from "react-redux";
-import * as filterActions from "../../store/modules/dictionaryState";
+import * as filterActions from "../../store/modules/filterState";
 
 export function SearchContainer(props) {
-  return <Search onChange={props.filter} />;
+  return <Search value={props.state} />;
 }
 
 const mapStateToProps = state => {
@@ -12,7 +12,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  filter: state => dispatch(filterActions.ChangeFilterState(state))
+  ad: state => dispatch(filterActions.ChangeAD(state))
 });
 
 SearchContainer = connect(mapStateToProps, mapDispatchToProps)(SearchContainer);

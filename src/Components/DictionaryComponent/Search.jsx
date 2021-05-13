@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 
@@ -12,24 +12,14 @@ const Tag = styled.div`
 `;
 
 export function Search(props) {
-  const value = useSelector(state => state.dictionaryState.filterState);
-  const [htmlTag, setHtmlTag] = useState([]);
-  const clickFunc = index => {
-    value.splice(index, 1);
-    props.onChange(value);
-  };
-  useEffect(() => {
-    setHtmlTag([]);
-    for (let i = 0; i < value.length; i++) {
-      setHtmlTag(
-        htmlTag.concat([
-          <Tag>
-            {value[i]}
-            <button onClick={e => clickFunc(i)}>x</button>
-          </Tag>
-        ])
-      );
-    }
-  }, [value.length]);
-  return <SearchBar>{htmlTag}</SearchBar>;
+  const value = useSelector(state => state.filterState);
+  const htmlTag = [];
+
+  return (
+    <SearchBar>
+      {props.value}
+      {htmlTag}
+      {value}
+    </SearchBar>
+  );
 }

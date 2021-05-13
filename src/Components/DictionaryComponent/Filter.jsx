@@ -11,15 +11,36 @@ const FilterBox = styled.div`
 `;
 
 export function Filter(props) {
-  const value = useSelector(state => state.dictionaryState.filterState);
+  const value = useSelector(state => state.filterState);
   return (
     <div>
       <FilterBox>
-        <FilterButton text={"AD"} onChange={props.onChange} />
-        <FilterButton text={"AP"} onChange={props.onChange} />
-        <FilterButton text={"HP"} onChange={props.onChange} />
-        <FilterButton text={"MANA"} onChange={props.onChange} />
-        <FilterButton text={"CSC"} onChange={props.onChange} />
+        <button onClick={e => console.log(value)}></button>
+        <FilterButton
+          text={"AD"}
+          onChange={props.onChangeAD}
+          value={value.ad}
+        />
+        <FilterButton
+          text={"AP"}
+          onChange={props.onChangeAP}
+          value={value.ap}
+        />
+        <FilterButton
+          text={"HP"}
+          onChange={props.onChangeHP}
+          value={value.hp}
+        />
+        <FilterButton
+          text={"MANA"}
+          onChange={props.onChangeMANA}
+          value={value.mana}
+        />
+        <FilterButton
+          text={"CSC"}
+          onChange={props.onChangeCSC}
+          value={value.csc}
+        />
       </FilterBox>
     </div>
   );
