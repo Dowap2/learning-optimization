@@ -19,27 +19,27 @@ export function Filter(props) {
         <FilterButton
           text={"AD"}
           onChange={props.onChangeAD}
-          value={value.ad}
+          value={value.AD}
         />
         <FilterButton
           text={"AP"}
           onChange={props.onChangeAP}
-          value={value.ap}
+          value={value.AP}
         />
         <FilterButton
           text={"HP"}
           onChange={props.onChangeHP}
-          value={value.hp}
+          value={value.HP}
         />
         <FilterButton
           text={"MANA"}
           onChange={props.onChangeMANA}
-          value={value.mana}
+          value={value.MANA}
         />
         <FilterButton
           text={"CSC"}
           onChange={props.onChangeCSC}
-          value={value.csc}
+          value={value.CSC}
         />
       </FilterBox>
     </div>

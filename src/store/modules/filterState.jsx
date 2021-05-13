@@ -13,29 +13,29 @@ export const ChangeMANA = createAction(MANA);
 export const ChangeCSC = createAction(CSC);
 
 const initalState = {
-  ad: false,
-  ap: false,
-  hp: false,
-  mana: false,
-  csc: false
+  AD: false,
+  AP: false,
+  HP: false,
+  MANA: false,
+  CSC: false
 };
 
 export default function reducer(state = initalState, action) {
   switch (action.type) {
     case AD: {
-      return { ...state, ad: action.payload };
+      return { ...state, AD: action.payload };
     }
     case AP: {
-      return { ...state, ap: action.payload };
+      return { ...state, AP: action.payload };
     }
     case HP: {
-      return { ...state, hp: action.payload };
+      return { ...state, HP: action.payload };
     }
     case MANA: {
-      return { ...state, mana: action.payload };
+      return { ...state, MANA: action.payload };
     }
     case CSC: {
-      return { ...state, csc: action.payload };
+      return { ...state, CSC: action.payload };
     }
     default: {
       return state;

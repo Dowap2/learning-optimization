@@ -12,13 +12,18 @@ const ItemBox = styled.div`
 export function Item() {
   return (
     <ItemBox>
+      <ItemList
+        text={"몰락한 왕의 검"}
+        src={"https://ddragon.leagueoflegends.com/cdn/11.8.1/img/item/3153.png"}
+        cost={3200}
+        tag={["AD"]}
+      />
+      {/* <ItemList />
       <ItemList />
       <ItemList />
       <ItemList />
       <ItemList />
-      <ItemList />
-      <ItemList />
-      <ItemList />
+      <ItemList /> */}
     </ItemBox>
   );
 }

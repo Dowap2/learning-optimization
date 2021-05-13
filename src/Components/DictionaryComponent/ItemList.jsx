@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 
 const ItemBox = styled.div`
+  display: ${props => props.display};
   width: 40px;
   height: 50px;
   padding: 0;
@@ -25,13 +27,29 @@ const ItemPrice = styled.div`
   padding: 0;
 `;
 
-export function ItemList() {
+export function ItemList(props) {
+  const filter = useSelector(state => state.filterState);
+  const [seen, setSeen] = useState("block");
+  useEffect(() => {
+    for (const key in filter) {
+      if (
+        filter[key] === true &&
+        props.tag.findIndex(element => element === key) >= 0
+      ) {
+        setSeen("block");
+      } else if (
+        filter[key] === true &&
+        props.tag.findIndex(element => element === key) === -1
+      ) {
+        setSeen("none");
+      }
+    }
+  }, [filter]);
+
   return (
-    <ItemBox>
-      <ItemImg
-        src={"https://ddragon.leagueoflegends.com/cdn/11.8.1/img/item/3153.png"}
-      ></ItemImg>
-      <ItemPrice>3200</ItemPrice>
+    <ItemBox display={seen}>
+      <ItemImg src={props.src} title={props.text}></ItemImg>
+      <ItemPrice>{props.cost}</ItemPrice>
     </ItemBox>
   );
 }
